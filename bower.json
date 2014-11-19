@@ -1,0 +1,21 @@
+{
+  "name": "michael-coleman.github.io",
+  "version": "0.0.0",
+  "homepage": "https://github.com/michael-coleman/michael-coleman.github.io",
+  "authors": [
+    "michael_coleman <michaelcoleman500@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.1",
+    "angular": "~1.3.3"
+  }
+}
