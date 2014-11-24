@@ -15,27 +15,28 @@ module.exports = function(grunt) {
         // Allows us to reference properties we declared in package.json.
         pkg: grunt.file.readJSON('package.json'),
 
-        //concat: {
-        //    options: {
-        //        // define a string to put between each file in the concatenated output
-        //        separator: ';'
-        //    },
+        concat: {
+            options: {
+                // define a string to put between each file in the concatenated output
+                separator: ';'
+            },
+            js: {
+                // The files to concatenate:
+                // Notice the wildcard, which is automatically expanded.
+                src: ['./bower_components/jquery/dist/jquery.js',
+                        './bower_components/bootstrap/dist/js/bootstrap.js',
+                        './bower_components/angular/angular.js',
+                        './custom/javascript/app.js'
+                ],
 
-        //  // 'dist' is what is called a "target."
-        //  // It's a way of specifying different sub-tasks or modes.
-        //    dist: {
-
-        //        // The files to concatenate:
-        //          // Notice the wildcard, which is automatically expanded.
-        //        src: ['src/**/*.js'],
-
-        //         // The destination file:
-        //         // Notice the angle-bracketed ERB-like templating,
-        //         // which allows you to reference other properties.
-        //         // This is equivalent to 'whatever_your_distFolder_is'/main.js'.
-        //            dest: '<%= distFolder %>/main.js'
-        //    }
-        //}
+                 // The destination file:
+                 // You can use angle-bracketed ERB-like templating,
+                 // which allows you to reference other properties.
+                 // This is equivalent to 'whatever_your_distFolder_is'/main.js'.
+                 // dest: '<%= distFolder %>/main.js'
+                dest: 'deploy/app.js'
+            }
+        },
 
         less: {
 
@@ -57,6 +58,7 @@ module.exports = function(grunt) {
     // Load grunt plugins
     // This will do a lookup similar to node's require() function.
     grunt.loadNpmTasks('grunt-contrib-less');
+    grunt.loadNpmTasks('grunt-contrib-concat');
 
     // Register our own custom task alias.
     grunt.registerTask('build', ['concat']);
