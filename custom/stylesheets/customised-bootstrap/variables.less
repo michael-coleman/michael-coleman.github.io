@@ -26,7 +26,7 @@
 //## Settings for some of the most global styles.
 
 //** Background color for `<body>`.
-@body-bg:               #fff;
+@body-bg:               #888;
 //** Global text color on `<body>`.
 
 @text-color:            @gray-dark;
@@ -349,7 +349,11 @@
 
 // Basics of a navbar
 @navbar-height:                    50px;
-@navbar-margin-bottom:             @line-height-computed;
+
+// Original
+//@navbar-margin-bottom:             @line-height-computed;
+@navbar-margin-bottom:             0px;
+
 @navbar-border-radius:             @border-radius-base;
 @navbar-padding-horizontal:        floor((@grid-gutter-width / 2));
 @navbar-padding-vertical:          ((@navbar-height - @line-height-computed) / 2);

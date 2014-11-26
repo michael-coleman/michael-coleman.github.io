@@ -26,6 +26,7 @@ module.exports = function(grunt) {
                 src: ['./bower_components/jquery/dist/jquery.js',
                         './bower_components/bootstrap/dist/js/bootstrap.js',
                         './bower_components/angular/angular.js',
+                        './bower_components/angular-route/angular-route.js',
                         './custom/javascript/app.js'
                 ],
 
@@ -51,6 +52,42 @@ module.exports = function(grunt) {
                         "./deploy/frontend.css" :"./custom/stylesheets/frontend.less"
                     }
             }
+        },
+
+        markdown: {
+            all: {
+                files: [
+                    {
+                        expand: true,
+                        src: 'docs/*.md',
+                        dest: 'docs-html/',
+                        ext: '.html'
+                    }
+                ]
+            }
+        },
+
+        // When registering watch task can specify multiple task and also sub tasks
+        // e.g. ['concat:js_backend','uglify:backend']
+        watch: {
+            less: {
+                files: ['./custom/stylesheets/**/*.less',
+                    'index.html',
+                ],
+                tasks: ['less']
+            },
+            js: {
+                files: [
+                    // watched files
+                    './custom/javascript/**/*.js'
+                ],
+                tasks: ['concat']
+            },
+            markdown: {
+                files: ['/docs/**/*.md'],
+                tasks: ['markdown:all']
+            }
+
         }
 
     }); // The end of grunt.initConfig
@@ -59,8 +96,12 @@ module.exports = function(grunt) {
     // This will do a lookup similar to node's require() function.
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-markdown');
 
     // Register our own custom task alias.
-    grunt.registerTask('build', ['concat']);
+    grunt.registerTask('build', ['concat','less']);
+    // The task "default" is the one that will be executed when we run only grunt in the terminal.
+    grunt.registerTask('default', ['watch']);
 
 };
