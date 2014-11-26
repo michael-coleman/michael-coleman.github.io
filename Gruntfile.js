@@ -64,6 +64,9 @@ module.exports = function(grunt) {
                         ext: '.html'
                     }
                 ]
+            },
+            options: {
+                template: 'docs/template.html'
             }
         },
 

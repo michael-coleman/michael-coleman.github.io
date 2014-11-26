@@ -10,6 +10,9 @@ app.config(['$routeProvider', function($routeProvider) {
         .when('/projects', {
             templateUrl: "views/projects.html"
         })
+        .when('/docs/node', {
+            templateUrl: "docs-html/docs/global-node-install.html"
+        })
         .otherwise({
             redirectTo: '/'
         });
