@@ -1,6 +1,6 @@
 ## how to install node modules globally on Ubuntu - without using sudo
 
-### establish where node is configured to install global packages
+### establish where node is currently configured to install global packages
 run:
 ~~~~
 $ npm config get prefix

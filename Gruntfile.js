@@ -87,8 +87,8 @@ module.exports = function(grunt) {
                 tasks: ['concat']
             },
             markdown: {
-                files: ['/docs/**/*.md'],
-                tasks: ['markdown:all']
+                files: ['docs/**/*.md'],
+                tasks: ['markdown']
             }
 
         }
