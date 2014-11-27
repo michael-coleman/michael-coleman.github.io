@@ -44,7 +44,10 @@ module.exports = function(grunt) {
             development: {
                     // Specify some options, usually specific to each plugin.
                     options: {
-                        compress: true
+                        compress: true,
+                        sourceMap: true,
+                        sourceMapFilename: "frontend.css.map"
+                        //sourceMapBasepath: "assets/style/"
                     },
                     files: {
                         // compile: destination << source
@@ -70,8 +73,14 @@ module.exports = function(grunt) {
             }
         },
 
-        // When registering watch task can specify multiple task and also sub tasks
-        // e.g. ['concat:js_backend','uglify:backend']
+        /*----------------------------------------------------------------------
+        |           GRUNT WATCH CONFIG
+        |-----------------------------------------------------------------------
+        |
+        |  When registering watch task can specify multiple task and also sub tasks
+        |  e.g. ['concat:js_backend','uglify:backend']
+        |
+        */
         watch: {
             less: {
                 files: ['./custom/stylesheets/**/*.less',
