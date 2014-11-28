@@ -83,8 +83,8 @@ module.exports = function(grunt) {
         */
         watch: {
             less: {
-                files: ['./custom/stylesheets/**/*.less',
-                    'index.html',
+                files: ['./custom/stylesheets/**/*.less'
+                    //'index.html',
                 ],
                 tasks: ['less']
             },
