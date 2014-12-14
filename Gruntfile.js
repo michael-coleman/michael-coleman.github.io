@@ -47,7 +47,7 @@ module.exports = function(grunt) {
                         compress: true,
                         sourceMap: true,
                         sourceMapFilename: "frontend.css.map"
-                        //sourceMapBasepath: "assets/style/"
+                        // (optional) sourceMapBasepath: "assets/style/"
                     },
                     files: {
                         // compile: destination << source
@@ -62,14 +62,15 @@ module.exports = function(grunt) {
                 files: [
                     {
                         expand: true,
-                        src: 'docs/*.md',
-                        dest: 'docs-html/',
+                        // These are the .md files which will be converted to HTML
+                        src: 'markdown/*.md',
+                        dest: '',
                         ext: '.html'
                     }
                 ]
             },
             options: {
-                template: 'docs/template.html'
+                template: 'markdown/template/template.html'
             }
         },
 
@@ -77,8 +78,11 @@ module.exports = function(grunt) {
         |           GRUNT WATCH CONFIG
         |-----------------------------------------------------------------------
         |
-        |  When registering watch task can specify multiple task and also sub tasks
-        |  e.g. ['concat:js_backend','uglify:backend']
+        |   This is the BIG watch task - any files included in a "files" array for a
+        |   given grunt task, will be watched for changes. If changes occur the task
+        |   will be run.
+        |   When registering watch task can specify multiple task and also sub tasks
+        |   e.g. ['concat:js_backend','uglify:backend']
         |
         */
         watch: {
@@ -96,7 +100,7 @@ module.exports = function(grunt) {
                 tasks: ['concat']
             },
             markdown: {
-                files: ['docs/**/*.md'],
+                files: ['markdown/**/*.*'],
                 tasks: ['markdown']
             }
 

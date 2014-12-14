@@ -11,7 +11,7 @@ app.config(['$routeProvider', function($routeProvider) {
             templateUrl: "views/projects.html"
         })
         .when('/docs/node', {
-            templateUrl: "docs-html/docs/global-node-install.html"
+            templateUrl: "markdown/global-node-install.html"
         })
         .otherwise({
             redirectTo: '/'
