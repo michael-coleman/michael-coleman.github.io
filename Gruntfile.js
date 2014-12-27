@@ -46,13 +46,16 @@ module.exports = function(grunt) {
                     options: {
                         compress: true,
                         sourceMap: true,
-                        sourceMapFilename: "frontend.css.map"
+                        // Note: its a bit weird but the sourcemap seems to need to go into the same directory as
+                        // index.html ? If you use "deploy/main.css.map" path. browser looks for
+                        // "deploy/deploy/main.css.map" - browser will throw an error and the source map wont work
+                        sourceMapFilename: "main.css.map"
                         // (optional) sourceMapBasepath: "assets/style/"
                     },
                     files: {
                         // compile: destination << source
-                        // i.e. frontend.css FROM frontend.less
-                        "./deploy/frontend.css" :"./custom/stylesheets/frontend.less"
+                        // i.e. frontend.css FROM main.less
+                        "./deploy/main.css" :"./custom/stylesheets/main.less"
                     }
             }
         },
