@@ -38432,8 +38432,10 @@ app.config(['$routeProvider', function($routeProvider) {
         })
         .when('/docs/node', {
             templateUrl: "markdown/global-node-install.html"
-        })
-        .otherwise({
+        });
+
+        // Catch all/most bad routes
+        $routeProvider.otherwise({
             redirectTo: '/'
         });
 
