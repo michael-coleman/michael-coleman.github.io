@@ -1,58 +1,10 @@
-// Core variables and mixins
-@import "variables.less";
-@import "mixins.less";
-
-// Reset and dependencies
-@import "normalize.less";
-//@import "print.less";
-@import "glyphicons.less";
-
-// Core CSS
-@import "core/scaffolding.less";
-@import "core/type.less";
-//@import "core/code.less";
-@import "core/grid.less";
-//@import "core/tables.less";
-@import "core/forms.less";
-@import "core/buttons.less";
-@import "core/backgrounds.less";
-
-// Components
-@import "components/component-animations.less";
-@import "components/dropdowns.less";
-//@import "components/button-groups.less";
-//@import "components/input-groups.less";
-@import "components/navs.less";
-@import "components/navbar.less";
-//@import "components/breadcrumbs.less";
-//@import "components/pagination.less";
-//@import "components/pager.less";
-@import "components/labels.less";
-//@import "components/badges.less";
-//@import "components/jumbotron.less";
-@import "components/thumbnails.less";
-//@import "components/alerts.less";
-//@import "components/progress-bars.less";
-//@import "components/media.less";
-//@import "components/list-group.less";
-@import "components/panels.less";
-//@import "components/responsive-embed.less";
-//@import "components/wells.less";
-//@import "components/close.less";
-
-// Components w/ JavaScript
-@import "components+javascript/modals.less";
-//@import "tooltip.less";
-//@import "popovers.less";
-//@import "carousel.less";
-
-
-// Utility classes
-@import "utilities/utilities.less";
-@import "utilities/responsive-utilities.less";
+@import "bootstrap/bootstrap.less";
 @import "spacing_helpers.less";
 
-// Fiddle space
+//---------------------------------------------------------------------------------
+//  Global styles
+//---------------------------------------------------------------------------------
+
 html, body {
   width: 100%;
   height: 100%;
@@ -64,28 +16,48 @@ html, body {
 
 }
 
+// Typography
+//--------------------------------------------
+
 h1#title {
   color: #fff;
   text-align: center;
-  font-family: 'Pacifico', cursive;;
-//  text-transform: uppercase;
+  font-family: 'Pacifico', cursive;
+  //  text-transform: uppercase;
   font-style: italic;
   font-size: 76px;
   margin-top: 20px;
 }
 
+
+//---------------------------------------------------------------------------------
+// Module/component specific styles
+//---------------------------------------------------------------------------------
+
+
+// Header
+// -------------------------------------------
+
+
+
 .inner-cover {
   margin-left: auto;
   margin-right: auto;
-margin-top: 30px;
+  margin-top: 30px;
   border-top: 1px solid white;
   border-bottom: 1px solid white;
   border-left: 7px solid white;
   border-right: 7px solid white;
-    width: 80%;
+  width: 80%;
   background-color: rgba(27, 45, 59, .9);
-padding-bottom: 30px;
-
-//  border-radius: 3px;
-
+  padding-bottom: 30px;
 }
+
+// Sections
+//--------------------------------------------------
+
+
+
+
+
+
