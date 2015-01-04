@@ -1,3 +1,0 @@
-/* This file file may not be used in this app but is here as an example placeholder
- for apps that might use it
- */
