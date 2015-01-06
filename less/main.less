@@ -2,6 +2,28 @@
 @import "spacing_helpers.less";
 
 //---------------------------------------------------------------------------------
+//  Variables
+//---------------------------------------------------------------------------------
+
+// Colors
+//-------------------------------------------
+
+// Main primary "portfolio theme" colour
+@port-primary: rgba(27, 45, 59, .9);
+
+// Primary Variants -
+@port-primary-light:   lighten(@port-primary, 20%);
+@port-primary-dark:    darken(@port-primary,20%);
+
+// Analogous variants
+@corner:         spin((@port-primary), -30);
+//@cornerLight:    hsl(hue(@corner), 100%, 70%);
+//@cornerDark:     hsl(hue(@corner), 60%, 40%);
+//@cornerFaded:    hsl(hue(@corner), 60%, 65%);
+
+
+
+//---------------------------------------------------------------------------------
 //  Global styles
 //---------------------------------------------------------------------------------
 
@@ -32,7 +54,13 @@ h1#title {
   margin-top: 20px;
 }
 
+//---------------------------------------------------------------------------------
+// utilities
+//---------------------------------------------------------------------------------
 
+.center-children {
+  text-align: center;
+}
 
 //---------------------------------------------------------------------------------
 // Module/component specific styles
@@ -46,13 +74,17 @@ h1#title {
 }
 
 
+// Footer
+//----------------------------------
+footer {
+  height: 100px;
+  background-color: @port-primary;
+  color: #fff;
+}
 
 
-//--------------------------------------------------
-// Sections
-//--------------------------------------------------
 
-// Home
+// Home header
 //--------------------------
 .header-bg {
   width: 100%;
@@ -74,9 +106,17 @@ h1#title {
   border-left: 7px solid white;
   border-right: 7px solid white;
   width: 80%;
-  background-color: rgba(27, 45, 59, .9);
+  background-color: @port-primary;
   padding-bottom: 30px;
 }
+
+// Skills
+//-----------------------------
+
+//.skills-no-bullets ul {
+//  list-style-type: none;
+//}
+
 
 
 // Contact
