@@ -66,14 +66,14 @@ module.exports = function(grunt) {
                         // WORKAROUND / HACK - JUST REMOVE ALL PATH FOLDER PREFIXES AND PUT
                         // compiled css AND sourcemap files in the root directory
                         // -----------------------------------------------------------------
-                        sourceMapFilename: "main.css.map"
+                        sourceMapFilename: "deploy.css.map"
                         // sourceMapBasepath: ""
                         // sourceMapURL: "deploy/main.css.map"
                     },
                     files: {
                         // compile: destination << source
                         // i.e. frontend.css FROM main.less
-                        "main.css" :"./less/main.less"
+                        "deploy.css" :"./less/main.less"
                     }
             }
         },

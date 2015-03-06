@@ -1,145 +1,61 @@
+//
+// Import Bootstrap collection of stylesheets
+//-------------------------------------------------------------------------
+//
+// Define bootstrap as the first and base stylesheet, in other words, if not
+// overridden in later stylesheets, bootstrap rules will apply.
+//
+// Bootstrap less is not altered? or maybe it is in variables?
+// Current practice aimed for is Bootstrap code should not be altered, for 2 reasons:
+//
+// 1. It makes it easier to upgrade, as the bootstrap old version code can be
+//    swapped out with newer version code and you dont have to worry about losing
+//    your custom changes. Similar to wordpress, theme / child themes.
+// 2. It makes it a bit hard to find your custom classes, if contained in bootstrap
+//    less files
+
 @import "bootstrap/bootstrap.less";
+
+// Libraries
+//-------------------------------
+
+// Note: Phpstorm throws errors (which are false positives and can be ignored)
+// but maybe the reason it throws (when .less files with the same path structure dont)
+// is because the extension here is CSS?
+// @import "bower_components/fontawesome/css/font-awesome.min.css";
+
+//<!--Google Font-->
+@import url('http://fonts.googleapis.com/css?family=Lato:900');
+@import url('http://fonts.googleapis.com/css?family=Open+Sans');
+
+
+//----------------------------------------------------------------------
+// Begin custom code
+//----------------------------------------------------------------------
+//
+// Organisation of custom style ruleset groupings and files follows bootstrap
+// system, because:
+//
+// 1. It makes it easier to find styles in both bootstrap files and custom files
+//    when you have a canonical and consistent organisation structure.
+// 2. Until I have a better way, Bootstrap system seems a reasonable structure
+//    to base my stylesheet organisation upon
+//
+
+@import "variables.less";
+@import "components.less";
+@import "content.less";
+
+// custom spacing helpers
 @import "spacing_helpers.less";
 
-//---------------------------------------------------------------------------------
-//  Variables
-//---------------------------------------------------------------------------------
 
-// Colors
-//-------------------------------------------
-
-// Main primary "portfolio theme" colour
-@port-primary: rgba(27, 45, 59, .9);
-
-// Primary Variants -
-@port-primary-light:   lighten(@port-primary, 20%);
-@port-primary-dark:    darken(@port-primary,20%);
-
-// Analogous variants
-@corner:         spin((@port-primary), -30);
-//@cornerLight:    hsl(hue(@corner), 100%, 70%);
-//@cornerDark:     hsl(hue(@corner), 60%, 40%);
-//@cornerFaded:    hsl(hue(@corner), 60%, 65%);
-
-
-
-//---------------------------------------------------------------------------------
-//  Global styles
-//---------------------------------------------------------------------------------
-
-html, body {
-  height: 100%;
-}
-
-.background-cover {
-  width: 100%;
-  height: 100%;
-  background: url('images/city-night-bokeh.jpg') no-repeat top center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-
-// Typography
 //--------------------------------------------
-
-h1#title {
-  color: #fff;
-  text-align: center;
-  font-family: 'Pacifico', cursive;
-  //  text-transform: uppercase;
-  font-style: italic;
-  font-size: 76px;
-  margin-top: 20px;
-}
-
-//---------------------------------------------------------------------------------
-// utilities
-//---------------------------------------------------------------------------------
+// Helpers / utilities
+//--------------------------------------------
 
 .center-children {
   text-align: center;
 }
-
-//---------------------------------------------------------------------------------
-// Module/component specific styles
-//---------------------------------------------------------------------------------
-
-// navbar
-//---------------------------------
-
-.navbar {
-  margin-bottom: 0;
-}
-
-
-// Footer
-//----------------------------------
-footer {
-  height: 100px;
-  background-color: @port-primary;
-  color: #fff;
-}
-
-
-
-// Home header
-//--------------------------
-.header-bg {
-  width: 100%;
-  height: 80%;
-  background: url('images/city-night-bokeh.jpg') no-repeat top center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-
-
-.inner-cover {
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 30px;
-  border-top: 1px solid white;
-  border-bottom: 1px solid white;
-  border-left: 7px solid white;
-  border-right: 7px solid white;
-  width: 80%;
-  background-color: @port-primary;
-  padding-bottom: 30px;
-}
-
-// Skills
-//-----------------------------
-
-//.skills-no-bullets ul {
-//  list-style-type: none;
-//}
-
-
-
-// Contact
-//--------------------------
-.contact {
-  width: 480px;
-  .center-block();
-
-
-  .panel-body {
-    position: relative;
-    height: 350px;
-  }
-
-}
-
-.google-badge {
-  position: absolute;
-  left: 50%;
-  top: 57%;
-  .translate(-50%, -50%);
-
-}
-
 
 
